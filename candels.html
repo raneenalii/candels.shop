@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <title>candles.com</title>
+    <style>
+        body {
+            background-color: rgb(220, 205, 205);
+            padding: -5px;
+        }
+
+        .H {
+            background-color: rgb(239, 205, 205);
+        }
+
+        .p {
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 40px;
+        }
+
+        .ty {
+            margin-right: 120px;
+            margin-left: -1100px;
+            width: 90px;
+            height: 30px;
+        }
+
+        .p1 {
+            display: inline-block;
+            text-align: center;
+            margin-top: 30px;
+            margin-left: 110px;
+        }
+
+        .ee:hover {
+            background-color: rgb(231, 167, 167);
+        }
+
+        .p1:hover {
+            background-color: #ffedec;
+        }
+
+        .p2 {
+            display: inline-block;
+            margin-left: 50px;
+            margin-right: 35px;
+            margin-top: 10px;
+        }
+
+        .p2:hover {
+            background-color: rgb(231, 167, 167);
+        }
+
+        .w {
+            margin-left: 45px;
+        }
+
+        .imgg {
+            margin-left: 30px;
+            margin-top: 0px;
+            margin-right: 200px;
+        }
+
+        .dd {
+            margin-left: 1px;
+            margin-top: 0px;
+            margin-right: 1px;
+            background-color: #D8B5B3;
+        }
+
+        .m {
+            margin-left: 30px;
+            margin-top: 0px;
+            margin-right: 10px;
+            width: 100px;
+            height: 80px;
+        }
+
+        #e:hover {
+            background-color: rgb(239, 239, 245);
+        }
+
+        #em:hover {
+            background-color: rgb(239, 239, 245);
+        }
+
+        #pass:hover {
+            background-color: rgb(239, 239, 245);
+        }
+
+        #nu:hover {
+            background-color: rgb(239, 239, 245);
+        }
+
+        #su:hover {
+            background-color: rgb(239, 239, 245);
+        }
+
+        .end {
+            background-color: #D8B5B3;
+            margin-left: 45px;
+        }
+        .cart-item {
+            border: 1px solid  rgb(220, 205, 205);
+            padding: 1px;
+            margin: -5px;
+            /* margin-left: 150px;
+            margin-right: 300px;
+            text-align: left;
+            padding: -5px; */
+
+        }
+        .delete-button {
+            cursor: pointer;
+            color: rgb(104, 72, 72);
+            margin-left: 5px;
+        }
+
+        .delete-button:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body><script>
+    window.alert("Welcome to Candleco page");
+
+    var totalAmount = 0; 
+    function addToCart(product, price) {
+        var cartItem = document.createElement("div");
+        cartItem.className = "cart-item";
+        cartItem.innerHTML = product + " - EGP " + price;
+        var deleteButton = document.createElement("button");
+        deleteButton.innerText = "Delete";
+        deleteButton.className = "delete-button";
+        deleteButton.onclick = function () {
+            removeFromCart(cartItem, price);
+        };
+        cartItem.appendChild(deleteButton);
+        document.getElementById("cart").appendChild(cartItem);
+        totalAmount += price;
+        updateTotal();
+    }
+    function removeFromCart(cartItem, price) {
+        cartItem.remove(); 
+        totalAmount -= price;
+        updateTotal();
+    }
+    function updateTotal() {
+        document.getElementById("total").innerText = "Total: EGP " + totalAmount.toFixed(2);
+    }
+</script>
+    <div>
+        <nav class="navbar" style="background-color:#D8B5B3;">
+            <h1 class="imgg">CANDLECO🕯</h1>
+            <img class="m" src="img/Untitled design.png">
+            <select class="ty">
+                <option selected disabled value="">types</option>
+                <option>coconut</option>
+                <option>vanilla</option>
+                <option>aoud</option>
+                <option>Strawberry</option>
+                <option>rose vanilla</option>
+                <option>candy</option>
+                <option>flower</option>
+            </select>
+        </nav>
+        <br>
+        <br>
+        <h3 class="w">Our candles are made with natural soy wax, which burns cleaner and longer than traditional paraffin wax candles. With a variety of scents to choose from and unique personalization on your candle label.</h3>
+        <br>
+        <h1 class="w">BEST SELLERS ❤️</h1>
+        <div class="p1">
+            <img src="img/202117_0228_zora-ceramic-lanterns-1-z.jpg" width="350px" height="360px">
+            <br>
+            <p class="p2">Coffee Scented Candle -EGP 345.00</p>
+            <br>
+            <button class="ee" onclick="addToCart('Coffee Scented Candle', 345.00)">ADD TO BAG</button>
+        </div>
+        <div class="p1">
+            <img src="img/1.webp" width="350px" height="360px">
+            <br>
+            <p class="p2">Aoud Scented Candle-EGP 445.00</p>
+            <br>
+            <button class="ee"onclick="addToCart('aoud Scented Candle', 445.00)">ADD TO BAG</button>
+        </div>
+        <div class="p1">
+            <img src="img/2.webp" wisth="350px" height="360px">
+            <br>
+            <p class="p2">Misk Scented Candle-EGP 545.00</p>
+            <br>
+            <button class="ee"button>Out of stock</button>
+        </div>
+        <div class="p1">
+            <img src="img/6.webp" width="350px" height="360px">
+            <br>
+            <p class="p2">Vanilla Scented Candel -EGP 500.00</p>
+            <br>
+            <button class="ee"onclick="addToCart('Vanilla Scented Candle', 500.00)">ADD TO BAG</button>
+        </div>
+        <div class="p1">
+            <img src="img/7.webp" wisth="350px" height="360px">
+            <br>
+            <p class="p2">Rose Vanilla Scented Candel-EGP 545.00</p>
+            <br>
+            <button class="ee"onclick="addToCart('Rose Vanilla Scented Candle', 545.00)">ADD TO BAG</button>
+        </div>
+        <div class="p1">
+            <img src="img/80_.jpg" wisth="350px" height="360px">
+            <br>
+            <p class="p2">Coconut Candel Scented-EGP 665.00</p>
+            <br>
+            <button class="ee"onclick="addToCart('Coconut Scented Candle', 665.00)">ADD TO BAG</button>
+        </div>
+        <div class="p1">
+            <img src="img/White-_1.webp" width="350px" height="360px">
+            <br>
+            <p class="p2">Lavender Scented Candel-EGP 400.00</p>
+            <br>
+            <button class="ee"onclick="addToCart('Lavender Scented Candle', 400.00)">ADD TO BAG</button>
+        </div>
+        <div class="p1">
+            <img src="img/10.webp" wisth="350px" height="360px">
+            <br>
+            <p class="p2">Flower Scented Candel Candel-EGP 445.00</p>
+            <br>
+            <button class="ee"onclick="addToCart('Flower Scented Candle', 445.00)">ADD TO BAG</button>
+        </div>
+        <div class="p1">
+            <img src="img/9.webp" wisth="350px" height="360px">
+            <br>
+            <p class="p2">Candy Candel Scented-EGP 445.00</p>
+            <br>
+            <button class="ee"onclick="addToCart('Candy Scented Candle', 445.00)">ADD TO BAG</button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 class="w">NEW ARRIVALS ❤️</h1>
+        <div class="p1">
+            <img src="img/11.webp" width="350px" height="360px">
+            <br>
+            <p class="p2">Strawberry Scented Candle -EGP 400.00</p>
+            <br>
+            <button class="ee" >Out of stock</button>
+        </div><div class="p1">
+            <img src="img/images (15).jpeg" wisth="350px" height="360px">
+            <br>
+            <p class="p2"> Dark Kiss Scented Candel-EGP 700.00</p>
+            <br>
+          <button class="ee" onclick="addToCart('Dark Kiss Scented Candle', 400.00)">ADD TO BAG</button>
+        </div>
+        <div class="p1">
+            <img src="img/Couldron_Aestheitc_Candle.webp" wisth="350px" height="360px">
+            <br>
+            <p class="p2">Rose Water Scented Candel-EGP 445.00</p>
+            <br>
+            <button class="ee" onclick="addToCart('Rose Water  Scented Candle', 445.00)">ADD TO BAG</button>
+        </div>
+        <div class="p1">
+            <img src="img/sea-mist-coastal-candle-small-356x356.jpg" wisth="350px" height="360px">
+            <br>
+            <p class="p2">Black Berry Scented Candel-EGP 445.00</p>
+            <br>
+            <button class="ee" onclick="addToCart('Black Berry Scented Candle', 445.00)">ADD TO BAG</button>
+        </div>
+        <div class="p1">
+            <img src="img/images.jpeg" wisth="350px" height="360px">
+            <br>
+            <p class="p2">Sea Scented Candel-EGP 245.00</p>
+            <br>
+            <button class="ee" onclick="addToCart('Sea Scented Candle', 245.00)">ADD TO BAG</button>
+        </div>
+        <div class="p1">
+            <img src="img/images (12).jpeg" wisth="350px" height="360px">
+            <br>
+            <p class="p2">White Misk Scented Candel-EGP 800.00</p>
+            <br>
+            <button class="ee" onclick="addToCart('White Misk  Scented Candle', 800.00)">ADD TO BAG</button>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <nav class="navbar" style="background-color:#D8B5B3;">
+            <h2 class="end">Please enter your data ❤️</h2>
+            <br> 
+        </nav>
+        <div id="cart" class="end"></div>
+        <form action="index.php" method="post" class="dd">
+            <nav class="dd">
+            <p id="total" class="end">Total: EGP 0.00</p>
+            </nav>
+            <label for="name">Name</label>
+            <input type="text" id="name" required/>
+                 
+            <label for="number">Your Number</label>
+            <input type="text" id="number" required/>
+            <br>
+            <br>
+            <label for="email">Email</label>
+            <input type="email" id="email" required/>
+            <label for="password">Password</label>
+            <input type="password" id="password" required/>
+            <br>
+            <br>
+            <button type="submit" name="button" id="btn">Submit</button>
+            <br>
+            <br>
+        </form>
+        <script src="Main.js"></script>
+    </div>
+</body>
+</html>
+
